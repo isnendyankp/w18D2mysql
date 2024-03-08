@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from connectors.mysql_connector import Session
 
 product_routes = Blueprint('product_routes',__name__)
 
