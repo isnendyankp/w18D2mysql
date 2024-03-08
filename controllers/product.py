@@ -26,6 +26,9 @@ def product_home():
 
         # convert to list
         products = products.scalars()
+
+        # print for debugging
+        print(products)
     
     except Exception as e:
         print(e)
