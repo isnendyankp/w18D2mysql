@@ -26,6 +26,9 @@ def product_home():
 
         # convert to list
         products = products.scalars()
-    except :
+    
+    except Exception as e:
+        print(e)
+        return "Error Processing Data"
 
     return render_template("products/product_home.html")
