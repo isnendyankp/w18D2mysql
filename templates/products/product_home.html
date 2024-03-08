@@ -70,10 +70,10 @@
             <!-- looping through the products -->
             {% for product in response_data['products'] %}
             <tr>
-                <td>1</td>
-                <td>Product A</td>
-                <td>$10.00</td>
-                <td>Description of Product A</td>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
                 <td>
                     <button>Review</button>
                     <button onclick="openEditProductForm()">Edit</button>
