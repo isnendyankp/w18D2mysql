@@ -18,7 +18,11 @@ def product_home():
     # try except
 
     try:
+        # create query
         product_query = select(Product)
+
+        # execute query
+        products = session.execute(product_query)
     except :
 
     return render_template("products/product_home.html")
