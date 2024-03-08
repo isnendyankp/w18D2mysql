@@ -27,6 +27,9 @@ def product_home():
         # convert to list
         products = products.scalars()
 
+        # add to response data dictionary 
+        response_data['products'] = products
+
         # print for debugging
         print(products)
     
