@@ -30,8 +30,6 @@ def product_home():
         # add to response data dictionary 
         response_data['products'] = products
 
-        # print for debugging
-        print(products)
     
     except Exception as e:
         print(e)
