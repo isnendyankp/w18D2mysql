@@ -23,6 +23,9 @@ def product_home():
 
         # execute query
         products = session.execute(product_query)
+
+        # convert to list
+        products = products.scalars()
     except :
 
     return render_template("products/product_home.html")
