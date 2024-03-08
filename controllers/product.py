@@ -35,4 +35,4 @@ def product_home():
         print(e)
         return "Error Processing Data"
 
-    return render_template("products/product_home.html")
+    return render_template("products/product_home.html", response_data=response_data)
