@@ -52,3 +52,9 @@ def product_insert():
     # Add session means add to the database
     session = Session()
     session.begin()
+
+    try:
+
+        session.commit()
+    except:
+        session.rollback()
