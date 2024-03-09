@@ -41,3 +41,5 @@ def product_home():
 # Post method
 @product_routes.route("/product", methods=['POST'])
 def product_insert():
+
+    new_product = Product()
