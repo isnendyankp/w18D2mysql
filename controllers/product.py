@@ -42,4 +42,9 @@ def product_home():
 @product_routes.route("/product", methods=['POST'])
 def product_insert():
 
-    new_product = Product()
+    # Create a new product object
+    new_product = Product(
+        name=request.form['name'],
+        price=request.form['price'],
+        description=request.form['description']
+    )
