@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from connectors.mysql_connector import Session
 
 from models.product import Product
