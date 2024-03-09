@@ -48,3 +48,7 @@ def product_insert():
         price=request.form['price'],
         description=request.form['description']
     )
+
+    # Add session means add to the database
+    session = Session()
+    session.begin()
