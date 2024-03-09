@@ -6,6 +6,7 @@ from sqlalchemy import select
 
 product_routes = Blueprint('product_routes',__name__)
 
+# Get method for the product home page
 @product_routes.route("/product", methods=['GET'])
 def product_home():
 
@@ -36,3 +37,7 @@ def product_home():
         return "Error Processing Data"
 
     return render_template("products/product_home.html", response_data=response_data)
+
+# Post method
+@product_routes.route("/product", methods=['POST'])
+def product_insert():
