@@ -57,6 +57,10 @@ def product_insert():
         session.add(new_product)
         session.commit()
     except Exception as e:
+        # failed to insert
         session.rollback()
         print(e)
-        return "Error"
+        return { "message": "Fail to insert data"}
+    
+    # Success to insert
+    return { "message": "Success insert data"}
