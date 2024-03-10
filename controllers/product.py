@@ -58,3 +58,5 @@ def product_insert():
         session.commit()
     except:
         session.rollback()
+        print(e)
+        return "Error"
