@@ -56,7 +56,7 @@ def product_insert():
     try:
 
         session.commit()
-    except:
+    except Exception as e:
         session.rollback()
         print(e)
         return "Error"
