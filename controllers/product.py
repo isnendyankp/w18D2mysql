@@ -67,12 +67,13 @@ def product_insert():
 
 # Delete method
 @product_routes.route("/product/<id>", methods=['DELETE'])
-def product_delete():
+def product_delete(id):
     session = Session()
     session.begin()
 
     try:
-       
+       product_to_delete = session.query(Product).filter(Product.id==id).first()
+       session.delete(product_to_delete)
        session.commit()
     except Exception as e:
         session.rollback()
