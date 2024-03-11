@@ -67,3 +67,12 @@ def product_insert():
 
 # Delete method
 @product_routes.route("/product/<id>", methods=['DELETE'])
+def product_delete():
+    session = Session()
+    session.begin()
+
+    try:
+       
+       session.commit()
+    except Exception as e:
+        session.rollback()
