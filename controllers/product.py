@@ -64,3 +64,6 @@ def product_insert():
     
     # Success to insert
     return { "message": "Success insert data"}
+
+# Delete method
+@product_routes.route("/product/<id>", methods=['DELETE'])
