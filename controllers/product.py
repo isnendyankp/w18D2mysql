@@ -77,3 +77,7 @@ def product_delete(id):
        session.commit()
     except Exception as e:
         session.rollback()
+        print(e)
+        return { "message": "Fail to delete data"}
+    
+    return { "message": "Success delete data"}
