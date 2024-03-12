@@ -22,6 +22,11 @@ def product_home():
         # create query
         product_query = select(Product)
 
+        # Tambhkan filter jika ada search query
+        if request.args.get('query') != None:
+            search_query = request.args.get('query')
+            product_query = product_query.where(Product.name.like(f"%{search_query}%"))
+
         # execute query
         products = session.execute(product_query)
 
