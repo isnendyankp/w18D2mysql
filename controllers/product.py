@@ -86,3 +86,22 @@ def product_delete(id):
         return { "message": "Fail to delete data"}
     
     return { "message": "Success delete data"}
+
+# Put method
+@product_routes.route("/product/<id>", methods=['PUT'])
+def product_update(id):
+    session = Session()
+    session.begin()
+
+    try:
+        product_to_update = session.query(Product).filter(Product.id==id).first()
+        product_to_update.name = request.form['name']
+        product_to_update.price = request.form['price']
+        product_to_update.description = request.form['description']
+        session.commit()
+    except Exception as e:
+        session.rollback()
+        print(e)
+        return { "message": "Fail to update data"}
+    
+    return { "message": "Success update data"}
