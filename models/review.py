@@ -7,7 +7,7 @@ class Review(Base):
     __tablename__ = 'product_review'
 
     id = mapped_column(Integer, primary_key=True)
-    product_id = mapped_column(Integer,  nullable=False)
+    product_id = mapped_column(Integer, ForeignKey("product.id", ondelete="CASCADE"))
     email = mapped_column(String(30), nullable= False)
     rating = mapped_column(Integer)
     review_content = mapped_column(Text)
