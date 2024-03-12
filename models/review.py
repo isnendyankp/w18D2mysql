@@ -1,5 +1,5 @@
 from models.base import Base
-from sqlalchemy import Integer, String, Text, DateTime
+from sqlalchemy import Integer, String, Text, DateTime, ForeignKey
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.sql import func
 
